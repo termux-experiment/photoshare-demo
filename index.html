@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhotoShare Demo</title>
+<style>
+body {
+  background: #fafafa;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 65px;
+}
+.box {
+  background: white;
+  border: 1px solid #ddd;
+  width: 300px;
+  padding: 25px;
+  text-align: center;
+}
+h1 {
+  font-family: cursive;
+  font-size: 38px;
+}
+input, button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px;
+  margin: 8px 0;
+}
+button {
+  background: #3897f0;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+}
+#result {
+  color: green;
+}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>PhotoShare</h1>
+<p>DEMO WEBSITE</p>
+
+<form id="demoForm">
+<input id="username"
+placeholder="Demo username" required>
+<button type="submit">Try Demo</button>
+</form>
+
+<p id="result"></p>
+</div>
+
+<script>
+document.getElementById("demoForm")
+.addEventListener("submit", function(e) {
+  e.preventDefault();
+  document.getElementById("result").textContent =
+  "Demo successful!";
+});
+</script>
+</body>
+</html>
