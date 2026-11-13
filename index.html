@@ -1,66 +1,100 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PhotoShare Demo</title>
 <style>
-body {
-  background: #fafafa;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  padding-top: 65px;
+*{box-sizing:border-box}
+body{
+ margin:0;
+ min-height:100vh;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-family:Arial,sans-serif;
+ background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+ padding:20px;
 }
-.box {
-  background: white;
-  border: 1px solid #ddd;
-  width: 300px;
-  padding: 25px;
-  text-align: center;
+.card{
+ background:white;
+ width:100%;
+ max-width:360px;
+ padding:30px 25px;
+ border-radius:18px;
+ text-align:center;
+ box-shadow:0 12px 35px #0003;
 }
-h1 {
-  font-family: cursive;
-  font-size: 38px;
+.logo{
+ font-size:38px;
+ font-weight:bold;
+ color:#833ab4;
+ margin:10px;
 }
-input, button {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 13px;
-  margin: 8px 0;
+.tag{
+ color:#777;
+ font-size:13px;
+ margin-bottom:25px;
 }
-button {
-  background: #3897f0;
-  color: white;
-  border: 0;
-  border-radius: 5px;
+input{
+ width:100%;
+ padding:15px;
+ margin:8px 0;
+ border:1px solid #ddd;
+ border-radius:8px;
+ font-size:15px;
 }
-#result {
-  color: green;
+button{
+ width:100%;
+ padding:14px;
+ margin-top:15px;
+ border:0;
+ border-radius:8px;
+ color:white;
+ font-size:16px;
+ font-weight:bold;
+ background:linear-gradient(90deg,#833ab4,#e1306c);
+}
+.note{
+ margin-top:25px;
+ color:#777;
+ font-size:12px;
+}
+#result{
+ color:green;
+ font-weight:bold;
 }
 </style>
 </head>
 <body>
-<div class="box">
-<h1>PhotoShare</h1>
-<p>DEMO WEBSITE</p>
+<div class="card">
+<div class="logo">PhotoShare</div>
+<div class="tag">SHARE YOUR MOMENTS</div>
 
-<form id="demoForm">
+<h3>Welcome Back!</h3>
+<p>Try our demo experience</p>
+
+<form id="demo">
 <input id="username"
-placeholder="Demo username" required>
+placeholder="Demo Username" required>
+
 <button type="submit">Try Demo</button>
 </form>
 
 <p id="result"></p>
+
+<div class="note">
+DEMO WEBSITE • NOT INSTAGRAM
+</div>
 </div>
 
 <script>
-document.getElementById("demoForm")
-.addEventListener("submit", function(e) {
-  e.preventDefault();
-  document.getElementById("result").textContent =
-  "Demo successful!";
+document.getElementById("demo")
+.addEventListener("submit",function(e){
+e.preventDefault();
+document.getElementById("result").textContent=
+"Welcome to PhotoShare Demo!";
 });
 </script>
 </body>
