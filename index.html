@@ -1,100 +1,148 @@
 
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PhotoShare Demo</title>
+<title>100K Social Demo</title>
+
 <style>
 *{box-sizing:border-box}
 body{
  margin:0;
- min-height:100vh;
- display:flex;
- align-items:center;
- justify-content:center;
+ background:#1d1d1d;
+ color:white;
  font-family:Arial,sans-serif;
- background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
- padding:20px;
+ min-height:100vh;
 }
-.card{
- background:white;
- width:100%;
- max-width:360px;
- padding:30px 25px;
- border-radius:18px;
- text-align:center;
- box-shadow:0 12px 35px #0003;
+.container{
+ max-width:450px;
+ margin:auto;
+ min-height:100vh;
+ padding:35px 30px;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+}
+.language{
+ color:#bbb;
+ font-size:17px;
+ margin-top:70px;
 }
 .logo{
- font-size:38px;
- font-weight:bold;
- color:#833ab4;
- margin:10px;
+ margin-top:125px;
+ width:100px;
+ height:100px;
+ border:9px solid transparent;
+ border-radius:29px;
+ background:
+ linear-gradient(#1d1d1d,#1d1d1d) padding-box,
+ linear-gradient(45deg,#ffb900,#ff0069,#a000ff) border-box;
+ display:grid;
+ place-items:center;
 }
-.tag{
- color:#777;
- font-size:13px;
- margin-bottom:25px;
+.camera{
+ width:49px;
+ height:49px;
+ border:7px solid #ec168a;
+ border-radius:50%;
+ position:relative;
+}
+.camera:after{
+ content:"";
+ position:absolute;
+ width:9px;
+ height:9px;
+ background:#ec168a;
+ border-radius:50%;
+ right:-13px;
+ top:-13px;
+}
+form{
+ width:100%;
+ margin-top:140px;
 }
 input{
  width:100%;
- padding:15px;
- margin:8px 0;
- border:1px solid #ddd;
- border-radius:8px;
- font-size:15px;
+ height:75px;
+ background:transparent;
+ border:2px solid #484848;
+ border-radius:22px;
+ padding:20px;
+ color:white;
+ font-size:16px;
+ margin-bottom:20px;
 }
 button{
  width:100%;
- padding:14px;
- margin-top:15px;
- border:0;
- border-radius:8px;
+ height:75px;
+ background:#0866df;
  color:white;
- font-size:16px;
- font-weight:bold;
- background:linear-gradient(90deg,#833ab4,#e1306c);
+ border:0;
+ border-radius:40px;
+ font-size:21px;
 }
-.note{
- margin-top:25px;
- color:#777;
- font-size:12px;
+.message{
+ color:#70baff;
+ text-align:center;
+ margin-top:20px;
 }
-#result{
- color:green;
+.spacer{flex:1;min-height:100px}
+.create{
+ background:transparent;
+ border:2px solid #3986d9;
+ color:#65b4ff;
+}
+.footer{
+ margin-top:30px;
+ font-size:32px;
  font-weight:bold;
+ letter-spacing:5px;
+}
+.disclaimer{
+ color:#aaa;
+ font-size:11px;
+ margin-top:12px;
 }
 </style>
 </head>
-<body>
-<div class="card">
-<div class="logo">PhotoShare</div>
-<div class="tag">SHARE YOUR MOMENTS</div>
 
-<h3>Welcome Back!</h3>
-<p>Try our demo experience</p>
+<body>
+<div class="container">
+
+<div class="language">English (US) ⌄</div>
+
+<div class="logo">
+<div class="camera"></div>
+</div>
 
 <form id="demo">
-<input id="username"
-placeholder="Demo Username" required>
+<input
+type="text"
+placeholder="Demo username"
+required>
 
 <button type="submit">Try Demo</button>
+<div class="message" id="message"></div>
 </form>
 
-<p id="result"></p>
+<div class="spacer"></div>
 
-<div class="note">
-DEMO WEBSITE • NOT INSTAGRAM
-</div>
+<button class="create" type="button"
+onclick="document.getElementById('message').textContent='Welcome to 100K!'">
+Create new account
+</button>
+
+<div class="footer">100K</div>
+<div class="disclaimer">INDEPENDENT DESIGN MOCKUP</div>
+
 </div>
 
 <script>
-document.getElementById("demo")
-.addEventListener("submit",function(e){
+document.getElementById("demo").addEventListener("submit",function(e){
 e.preventDefault();
-document.getElementById("result").textContent=
-"Welcome to PhotoShare Demo!";
+document.getElementById("message").textContent=
+"Welcome to 100K Social!";
 });
 </script>
 </body>
